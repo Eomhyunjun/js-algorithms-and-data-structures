@@ -23,7 +23,7 @@ describe("three different ways to swap", () => {
   });
 
   test("performance comparison", () => {
-    const iterations = 1000000;
+    const iterations = 1_000_000_000; // 1 billion
     let arr: number[];
 
     console.time("swap with temp");
@@ -48,3 +48,15 @@ describe("three different ways to swap", () => {
     console.timeEnd("swap with xor");
   });
 });
+
+/**
+ * -------------------------------------
+ * [performance test result]
+ * -------------------------------------
+ * xor > Destructuring assignment > temp
+ * -------------------------------------
+ * swap with temp: 11925 ms
+ * swap with Destructuring assignment: 11280 ms
+ * swap with xor: 11094 ms
+ * -------------------------------------
+ */
