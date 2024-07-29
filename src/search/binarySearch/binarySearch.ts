@@ -5,7 +5,7 @@
  * @returns {number[] | number} The index of the target in the array, or -1 if not found.
  */
 
-function binarySearch(arr, target) {
+function binarySearch(arr: number[], target: number): number {
   let left = 0;
   let right = arr.length - 1;
 
