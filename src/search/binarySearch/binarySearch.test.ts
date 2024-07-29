@@ -1,4 +1,5 @@
-const binarySearch = require("./binarySearch");
+import { describe, expect, test } from "@jest/globals";
+import binarySearch from "./binarySearch";
 
 /**
  * Tests for the binarySearch function.

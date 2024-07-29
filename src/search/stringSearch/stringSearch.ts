@@ -5,7 +5,7 @@
  * @returns {number} The number of times the short string appears in the long string
  */
 
-function stringSearch(long: string, short: string): number {
+export default function stringSearch(long: string, short: string): number {
   var count = 0;
   for (var i = 0; i < long.length; i++) {
     for (var j = 0; j < short.length; j++) {
@@ -15,5 +15,3 @@ function stringSearch(long: string, short: string): number {
   }
   return count;
 }
-
-module.exports = stringSearch;
