@@ -3,10 +3,8 @@
   "type": "module",
   "version": "1.0.0",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
+    "build": "tsc --build",
     "test": "jest"
   },
   "keywords": [],
@@ -19,6 +17,5 @@
     "@jest/globals": "^29.7.0",
     "typescript": "^5.5.4"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
