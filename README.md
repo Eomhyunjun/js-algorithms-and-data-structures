@@ -1,1 +1,40 @@
 # js-algorithms-and-data-structures
+
+### Sorting Algorithm
+
+| name                         |                          |                                   |
+| ---------------------------- | ------------------------ | --------------------------------- |
+| [bubble](./src/sort/bubble/) | **bubbleSort**           | normal ver                        |
+|                              | **bubbleSortDescending** | Iterates from the end             |
+|                              | **bubbleSort_opt**       | Optimized to skip sorted sections |
+
+### Search
+
+| name                                 |                  |                                            |
+| ------------------------------------ | ---------------- | ------------------------------------------ |
+| [binary](./src/search/binarySearch/) | **binarySearch** | Finds the index of the target in the array |
+| [string](./src/search/stringSearch/) | **stringSearch** | Searches for a substring within a string   |
+
+### Utils
+
+| name                      |                  |                                                                  |
+| ------------------------- | ---------------- | ---------------------------------------------------------------- |
+| [swap](./src/utils/swap/) | **swap**         | Swaps two elements using a temp variable                         |
+|                           | **destructSwap** | Swaps two elements using Destructuring assignment (ES2015)       |
+|                           | **xorSwapt**     | Swaps two elements using XOR operation without using extra space |
+
+<br>
+
+## How to Run the Tests
+
+1. **Install dependencies:**
+
+```bash
+npm install
+```
+
+2. **Run the tests:**
+
+```bash
+npm test
+```
