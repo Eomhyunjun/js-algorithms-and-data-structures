@@ -2,11 +2,11 @@
 
 ### Sorting Algorithm
 
-| name                         |                          |                                   |
-| ---------------------------- | ------------------------ | --------------------------------- |
-| [bubble](./src/sort/bubble/) | **bubbleSort**           | normal ver                        |
-|                              | **bubbleSortDescending** | Iterates from the end             |
-|                              | **bubbleSort_opt**       | Optimized to skip sorted sections |
+| name                         |                     |                                   |
+| ---------------------------- | ------------------- | --------------------------------- |
+| [bubble](./src/sort/bubble/) | **bubbleSort**      | normal ver                        |
+|                              | **bubbleSort_desc** | Iterates from the end             |
+|                              | **bubbleSort_opt**  | Optimized to skip sorted sections |
 
 ### Search
 
@@ -17,11 +17,11 @@
 
 ### Utils
 
-| name                      |                  |                                                                  |
-| ------------------------- | ---------------- | ---------------------------------------------------------------- |
-| [swap](./src/utils/swap/) | **swap**         | Swaps two elements using a temp variable                         |
-|                           | **destructSwap** | Swaps two elements using Destructuring assignment (ES2015)       |
-|                           | **xorSwapt**     | Swaps two elements using XOR operation without using extra space |
+| name                      |                   |                                                                  |
+| ------------------------- | ----------------- | ---------------------------------------------------------------- |
+| [swap](./src/utils/swap/) | **swap**          | Swaps two elements using a temp variable                         |
+|                           | **swap_destruct** | Swaps two elements using Destructuring assignment (ES2015)       |
+|                           | **swap_xor**      | Swaps two elements using XOR operation without using extra space |
 
 <br>
 

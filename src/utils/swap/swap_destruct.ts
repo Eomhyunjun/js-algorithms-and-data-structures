@@ -1,4 +1,4 @@
-export default function destructSwap(
+export default function swap_destruct(
   arr: number[],
   idx1: number,
   idx2: number

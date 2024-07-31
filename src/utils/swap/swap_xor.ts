@@ -1,4 +1,4 @@
-export default function xorSwap(
+export default function swap_xor(
   arr: number[],
   idx1: number,
   idx2: number
