@@ -2,11 +2,12 @@
 
 ### Sorting Algorithm
 
-| name                         |                     |                                   |
-| ---------------------------- | ------------------- | --------------------------------- |
-| [bubble](./src/sort/bubble/) | **bubbleSort**      | normal ver                        |
-|                              | **bubbleSort_desc** | Iterates from the end             |
-|                              | **bubbleSort_opt**  | Optimized to skip sorted sections |
+| name                               |                     |                                   |
+| ---------------------------------- | ------------------- | --------------------------------- |
+| [bubble](./src/sort/bubble/)       | **bubbleSort**      | normal ver                        |
+|                                    | **bubbleSort_desc** | Iterates from the end             |
+|                                    | **bubbleSort_opt**  | Optimized to skip sorted sections |
+| [selection](./src/sort/selection/) | **selectionSort**   | normal ver                        |
 
 ### Search
 
