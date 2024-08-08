@@ -8,6 +8,7 @@
 |                                    | **bubbleSort_desc** | Iterates from the end             |
 |                                    | **bubbleSort_opt**  | Optimized to skip sorted sections |
 | [selection](./src/sort/selection/) | **selectionSort**   | normal ver                        |
+| [insertion](./src/sort/insertion/) | **insertionSort**   | normal ver                        |
 
 ### Search
 
