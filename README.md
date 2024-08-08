@@ -2,13 +2,14 @@
 
 ### Sorting Algorithm
 
-| name                               |                     |                                   |
-| ---------------------------------- | ------------------- | --------------------------------- |
-| [bubble](./src/sort/bubble/)       | **bubbleSort**      | normal ver                        |
-|                                    | **bubbleSort_desc** | Iterates from the end             |
-|                                    | **bubbleSort_opt**  | Optimized to skip sorted sections |
-| [selection](./src/sort/selection/) | **selectionSort**   | normal ver                        |
-| [insertion](./src/sort/insertion/) | **insertionSort**   | normal ver                        |
+| name                               |                         |                                    |
+| ---------------------------------- | ----------------------- | ---------------------------------- |
+| [bubble](./src/sort/bubble/)       | **bubbleSort**          | normal ver                         |
+|                                    | **bubbleSort_desc**     | Iterates from the end              |
+|                                    | **bubbleSort_opt**      | Optimized to skip sorted sections  |
+| [selection](./src/sort/selection/) | **selectionSort**       | normal ver                         |
+| [insertion](./src/sort/insertion/) | **insertionSort**       | normal ver                         |
+|                                    | **binaryInsertionSort** | + (binarySearch & Linked list) ver |
 
 ### Search
 
