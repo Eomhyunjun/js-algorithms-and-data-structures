@@ -1,8 +1,10 @@
-import { describe, expect, test } from "@jest/globals";
+import { beforeAll, describe, expect, test } from "@jest/globals";
 import insertionSort from "./insertionSort";
+import binaryInsertionSort from "./binaryInsertionSort";
 
 const sortingAlgorithms = {
   insertionSort,
+  binaryInsertionSort,
 };
 
 describe("Sorting Algorithms", () => {
@@ -50,6 +52,55 @@ describe("Sorting Algorithms", () => {
         expect(() => sort([1, {}, 3])).toThrow(TypeError);
         expect(() => sort([1, undefined, 3])).toThrow(TypeError);
       });
+    });
+  });
+});
+
+describe("Sorting Algorithms Performance", () => {
+  const arraySize = 100;
+  const testRuns = 100;
+  const times = [];
+  const algorithms = Object.keys(sortingAlgorithms);
+
+  function generateRandomArray(size) {
+    return Array.from({ length: size }, () => Math.floor(Math.random() * size));
+  }
+
+  function measureAveragePerformance(sortFn, testRuns, arraySize) {
+    let totalTime = 0;
+    for (let i = 0; i < testRuns; i++) {
+      const testArray = generateRandomArray(arraySize);
+      const start = process.hrtime.bigint();
+      sortFn(testArray);
+      const end = process.hrtime.bigint();
+      totalTime += Number(end - start);
+    }
+    return totalTime / testRuns;
+  }
+
+  beforeAll(() => {
+    algorithms.forEach((algorithm) => {
+      const sort = sortingAlgorithms[algorithm];
+      // Perform correctness test for each algorithm
+      for (let i = 0; i < testRuns; i++) {
+        const testArray = generateRandomArray(arraySize);
+        const sortedArray = sort(testArray.slice());
+        expect(sortedArray).toEqual(testArray.slice().sort((a, b) => a - b));
+      }
+
+      // Measure performance for each algorithm
+      const averageTime = measureAveragePerformance(sort, testRuns, arraySize);
+      times.push({ algorithm, averageTime });
+    });
+  });
+
+  test("Rank sorting algorithm performance", () => {
+    times.sort((a, b) => a.averageTime - b.averageTime);
+    console.log("Algorithm performance ranking:");
+    times.forEach((entry, index) => {
+      console.log(
+        `${index + 1}. ${entry.algorithm}: ${entry.averageTime} nanoseconds`
+      );
     });
   });
 });

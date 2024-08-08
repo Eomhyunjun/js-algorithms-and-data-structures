@@ -1,58 +1,7 @@
-import { describe, expect, test } from "@jest/globals";
+import { beforeAll, describe, expect, test } from "@jest/globals";
 import bubbleSort from "./bubbleSort";
 import { bubbleSort_desc } from "./bubbleSort_desc";
 import { bubbleSort_opt } from "./bubbleSort_opt";
-
-/*
--------------------------------------
-[performance test result]
--------------------------------------
-[Sorting Algorithms]
-  bubbleSort
-    ✓ should sort an empty array (2 ms)
-    ✓ should sort an array with one element
-    ✓ should sort an already sorted array
-    ✓ should sort a reverse sorted array
-    ✓ should sort an array with all elements the same
-    ✓ should sort an array with duplicate elements (1 ms)
-    ✓ should sort an array with positive and negative numbers
-    ✓ should throw an error if the input is not an array (6 ms)
-    ✓ should throw an error if the array contains non-number elements
-  bubbleSort_desc
-    ✓ should sort an empty array (1 ms)
-    ✓ should sort an array with one element
-    ✓ should sort an already sorted array
-    ✓ should sort a reverse sorted array
-    ✓ should sort an array with all elements the same
-    ✓ should sort an array with duplicate elements
-    ✓ should sort an array with positive and negative numbers
-    ✓ should throw an error if the input is not an array (1 ms)
-    ✓ should throw an error if the array contains non-number elements
-  bubbleSort_opt
-    ✓ should sort an empty array
-    ✓ should sort an array with one element
-    ✓ should sort an already sorted array
-    ✓ should sort a reverse sorted array
-    ✓ should sort an array with all elements the same
-    ✓ should sort an array with duplicate elements
-    ✓ should sort an array with positive and negative numbers
-    ✓ should throw an error if the input is not an array (1 ms)
-    ✓ should throw an error if the array contains non-number elements (1 ms)
-
-[Sorting Algorithms Performance]
-  ✓ bubbleSort should sort correctly (5 ms)
-  ✓ bubbleSort performance (14 ms)
-  ✓ bubbleSort_desc should sort correctly (4 ms)
-  ✓ bubbleSort_desc performance (3 ms)
-  ✓ bubbleSort_opt should sort correctly (4 ms)
-  ✓ bubbleSort_opt performance (2 ms)
--------------------------------------
-Test Suites: 1 passed, 1 total
-Tests:       33 passed, 33 total
-Snapshots:   0 total
-Time:        0.845 s, estimated 1 s
--------------------------------------
-*/
 
 const sortingAlgorithms = {
   bubbleSort,
@@ -109,32 +58,51 @@ describe("Sorting Algorithms", () => {
   });
 });
 
-function generateRandomArray(size) {
-  return Array.from({ length: size }, () => Math.floor(Math.random() * size));
-}
-
-function measurePerformance(sortFunction, arr) {
-  const start = process.hrtime.bigint();
-  sortFunction(arr);
-  const end = process.hrtime.bigint();
-  return Number(end - start);
-}
-
 describe("Sorting Algorithms Performance", () => {
-  const arraySize = 1000;
-  const testArray = generateRandomArray(arraySize);
+  const arraySize = 100;
+  const testRuns = 100;
+  const times = [];
+  const algorithms = Object.keys(sortingAlgorithms);
 
-  Object.keys(sortingAlgorithms).forEach((algorithm) => {
-    const sort = sortingAlgorithms[algorithm];
+  function generateRandomArray(size) {
+    return Array.from({ length: size }, () => Math.floor(Math.random() * size));
+  }
 
-    test(`${algorithm} should sort correctly`, () => {
-      const sortedArray = sort(testArray.slice());
-      expect(sortedArray).toEqual(testArray.slice().sort((a, b) => a - b));
+  function measureAveragePerformance(sortFn, testRuns, arraySize) {
+    let totalTime = 0;
+    for (let i = 0; i < testRuns; i++) {
+      const testArray = generateRandomArray(arraySize);
+      const start = process.hrtime.bigint();
+      sortFn(testArray);
+      const end = process.hrtime.bigint();
+      totalTime += Number(end - start);
+    }
+    return totalTime / testRuns;
+  }
+
+  beforeAll(() => {
+    algorithms.forEach((algorithm) => {
+      const sort = sortingAlgorithms[algorithm];
+      // Perform correctness test for each algorithm
+      for (let i = 0; i < testRuns; i++) {
+        const testArray = generateRandomArray(arraySize);
+        const sortedArray = sort(testArray.slice());
+        expect(sortedArray).toEqual(testArray.slice().sort((a, b) => a - b));
+      }
+
+      // Measure performance for each algorithm
+      const averageTime = measureAveragePerformance(sort, testRuns, arraySize);
+      times.push({ algorithm, averageTime });
     });
+  });
 
-    test(`${algorithm} performance`, () => {
-      const time = measurePerformance(sort, testArray.slice());
-      console.log(`${algorithm} Time: ${time} nanoseconds`);
+  test("Rank sorting algorithm performance", () => {
+    times.sort((a, b) => a.averageTime - b.averageTime);
+    console.log("Algorithm performance ranking:");
+    times.forEach((entry, index) => {
+      console.log(
+        `${index + 1}. ${entry.algorithm}: ${entry.averageTime} nanoseconds`
+      );
     });
   });
 });
