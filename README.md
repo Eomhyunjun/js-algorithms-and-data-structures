@@ -10,7 +10,8 @@
 | [selection](./src/sort/selection/) | **selectionSort**       | normal ver                         |
 | [insertion](./src/sort/insertion/) | **insertionSort**       | normal ver                         |
 |                                    | **binaryInsertionSort** | + (binarySearch & Linked list) ver |
-| [merge](./src/sort/insertion/)     | **mergeSort**           | normal ver                         |
+| [merge](./src/sort/merge/)         | **mergeSort**           | normal ver                         |
+| [quick](./src/sort/quick/)         | **quickSort**           | normal ver                         |
 
 ### Search
 
