@@ -1,9 +1,10 @@
 {
   "name": "js-algorithms-and-data-structures",
-  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "ts-node",
     "build": "tsc --build",
     "test": "jest"
   },
@@ -12,10 +13,12 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.3",
-    "@jest/globals": "^29.7.0",
     "typescript": "^5.5.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "ts-node": "^10.9.2"
+  }
 }
