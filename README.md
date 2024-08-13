@@ -22,11 +22,14 @@
 
 ### Utils
 
-| name                      |                   |                                                                  |
-| ------------------------- | ----------------- | ---------------------------------------------------------------- |
-| [swap](./src/utils/swap/) | **swap**          | Swaps two elements using a temp variable                         |
-|                           | **swap_destruct** | Swaps two elements using Destructuring assignment (ES2015)       |
-|                           | **swap_xor**      | Swaps two elements using XOR operation without using extra space |
+| name                              |                      |                                                                    |
+| --------------------------------- | -------------------- | ------------------------------------------------------------------ |
+| [swap](./src/utils/swap/)         | **swap**             | Swaps two elements using a temp variable                           |
+|                                   | **swap_destruct**    | Swaps two elements using Destructuring assignment (ES2015)         |
+|                                   | **swap_xor**         | Swaps two elements using XOR operation without using extra space   |
+| [getDigit](./src/utils/getDigit/) | **getDigit**         | Extracts a digit using mathematical operations                     |
+|                                   | **getDigitByString** | Extracts a digit by converting the number to a string and indexing |
+|                                   | **getDigitByat**     | Extracts a digit using string conversion and the at() method       |
 
 <br>
 
