@@ -18,8 +18,7 @@ export function radixSort(numbers: number[]) {
 
     for (let i = 0; i < res.length; i++) {
       const digit = getDigit(res[i], digits);
-      if (!digit) tmp[0].push(res[i]);
-      else tmp[digit].push(res[i]);
+      tmp[digit].push(res[i]);
     }
 
     res = [].concat(...tmp);

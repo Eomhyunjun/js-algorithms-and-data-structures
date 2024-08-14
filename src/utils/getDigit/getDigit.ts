@@ -1,14 +1,7 @@
 /**
  * normal ver
- * @description return null if the place is out of range
- * @param {number} number
- * @param {number} place
- * @returns {number | null}
  */
-export function getDigit(number: number, place: number): number | null {
-  if (place < 0) return null;
-  if (place >= number.toString().length) return null;
-
+export function getDigit(number: number, place: number): number {
   return Math.floor(Math.abs(number) / Math.pow(10, place)) % 10;
 }
 
