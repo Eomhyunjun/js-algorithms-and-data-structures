@@ -12,6 +12,7 @@
 |                                    | **binaryInsertionSort** | + (binarySearch & Linked list) ver |
 | [merge](./src/sort/merge/)         | **mergeSort**           | normal ver                         |
 | [quick](./src/sort/quick/)         | **quickSort**           | normal ver                         |
+| [radix](./src/sort/radix/)         | **radixSort**           | normal ver                         |
 
 ### Search
 
