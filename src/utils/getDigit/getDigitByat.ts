@@ -10,9 +10,9 @@ function getDigitByat(number: number, place: number) {
   return Number(stringNumber.at(-1 - place));
 }
 
-// simple test for getDigitByat
-console.log("=== getDigitByat ===");
-console.log(getDigitByat(12345, 0)); // 5
-console.log(getDigitByat(-12345, 1)); // 4
-console.log(getDigitByat(12345, 2)); // 3
-console.log(getDigitByat(12345, 4)); // 1
+// // simple test for getDigitByat
+// console.log("=== getDigitByat ===");
+// console.log(getDigitByat(12345, 0)); // 5
+// console.log(getDigitByat(-12345, 1)); // 4
+// console.log(getDigitByat(12345, 2)); // 3
+// console.log(getDigitByat(12345, 4)); // 1
