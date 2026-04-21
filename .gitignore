@@ -1,3 +1,6 @@
 /node_modules
 /dist
-/my
+/think
+*env*
+.mcp.json
+CLAUDE.md
