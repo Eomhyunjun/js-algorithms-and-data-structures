@@ -21,6 +21,13 @@
 | [binary](./src/search/binarySearch/) | **binarySearch** | Finds the index of the target in the array |
 | [string](./src/search/stringSearch/) | **stringSearch** | Searches for a substring within a string   |
 
+### Graph
+
+| name                    |                  |                                                  |
+| ----------------------- | ---------------- | ------------------------------------------------ |
+| [graph](./src/graph/)   | **Graph**        | Undirected graph class based on adjacency list   |
+| [dfs](./src/graph/dfs/) | **dfsRecursive** | Depth-first traversal using the recursion stack  |
+
 ### Utils
 
 | name                              |                      |                                                                    |
